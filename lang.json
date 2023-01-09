@@ -1,0 +1,34 @@
+{
+    "title": {
+        "en": "The simplest artificial intelligence",
+        "ru": "Простейший искусственный интеллект"
+    },
+    "topic": {
+        "en": "Artificial Intelligence on JavaScript",
+        "ru": "Искусственный Интеллект на JavaScript"
+    },
+    "topic-1": {
+        "en": "one - Neuron",
+        "ru": "один - Нейрон"
+    },
+    "description": {
+        "en": "Familiarity with simplest artificial intelligence",
+        "ru": "Знакомство с простейшим искусственным интеллектом"
+    },
+    "legend-1": {
+        "en": "neuron controls",
+        "ru": "yправление нейроном"
+    },
+    "left-side": {
+        "en": "Left side",
+        "ru": "Левая сторона"
+    },
+    "right-side": {
+        "en": "Right side",
+        "ru": "Правая сторона"
+    },
+    "inaccuracyNeuron": {
+        "en": "Inaccuracy in the responses neuron: 0%",
+        "ru": "Погрешность в ответах нейрона: 0%"  
+    }
+}
