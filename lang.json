@@ -30,5 +30,29 @@
     "inaccuracyNeuron": {
         "en": "Inaccuracy in the responses neuron: 0%",
         "ru": "Погрешность в ответах нейрона: 0%"  
+    },
+    "image-dendrits": {
+        "en": "Dendrites (inputs)",
+        "ru": "Дендриты (входы)"
+    },
+    "image-synapses": {
+        "en": "Synapses (weighting factor)",
+        "ru": "Синапсы (весовой коэффициент)"
+    },
+    "image-adder": {
+        "en": "Adder (neuron cell)",
+        "ru": "Сумматор (нейронная клетка)"
+    },
+    "image-axon": {
+        "en": "Axon (activation function)",
+        "ru": "Аксон (функция активации)"
+    },
+    "image-exit": {
+        "en": "Exit",
+        "ru": "Выход"
+    },
+    "description_text": {
+        "en": "A neural network of one neuron is the simplest one-layer network consisting of:\n• 3 data inputs\n\t• X1 X2 like X, Y\n\t• X3 as a constant = 1\n• 3 weight coefficients (W1 W2 W3)\n• 1 neuron (S)\n• 1 axon (used Sigmoid)\n\t• slope factor = 0.03",
+        "ru": "Неронная сеть из одного нейрона это однослойная простейшая сеть состояшия из:\n• 3 входныx данных (X1 X2 X3)\n\t• X1 X2 как X, Y\n\t• X3 как постоянная = 1\n• 3 весовых коэффициетов (W1 W2 W3)\n• 1 нейрона (S)\n• 1 аксона (использовался Сигмойд)\n\t• коэффициент наклона функции = 0.03"
     }
 }

@@ -2,8 +2,8 @@
 const translateFileName = "lang.json";
 
 async function getFile(fileName) {
-    let response = (await fetch(fileName));
-    return await response.json();  
+  let response = (await fetch(fileName));
+  return await response.json();  
 }
 
 // Change Language
@@ -134,17 +134,20 @@ function restart() {
   Ts.length = 0;
   buf.length = 0;
   inaccuracyElement.innerHTML = inaccuracyElementText;
-  for (let x = 1; x < Xn; x++) {
+  for (let x = 0; x < Xn; x++) {
     for (let y = 1; y <= Yn; y++) {
       const Table = document.querySelectorAll('.row')[y].children[x];
       Table.removeAttribute('class');
       Table.setAttribute('class', 'row-cell');
     }
   }
+  // Promise.resolve(writeBound());
+  writeBound();
   return;
 }
 
 function begin(n) {
+  writeBound();
   init(n);
   cArr(Xn, Yn);
   shuffle(buf);
@@ -184,6 +187,4 @@ function writeBound() {
     mark(false, 10, i);
     mark(true, 11, i);
   }
-}
-
-writeBound()
+} writeBound();

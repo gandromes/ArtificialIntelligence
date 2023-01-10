@@ -3,6 +3,7 @@
   --psudo-font-color: rgb(242, 182, 109);
   --helping-background-color: #686868;
   --major-backgroundcolor: #242424;
+  --black: #181818;
 }
 
 *,
@@ -151,12 +152,15 @@ h6 {
   /* background: linear-gradient(to right, black, whitesmoke, whitesmoke,whitesmoke, whitesmoke, whitesmoke,whitesmoke); */
   /* border: .5rem solid whitesmoke; */
   border-radius: 2rem;
+  -webkit-box-shadow: 2px 2px 10px -2px var(--black);
+  box-shadow: 2px 2px 10px -2px var(--black);
 }
 
 .description_text {
   white-space: pre-wrap;
   padding: 2rem;
   padding-bottom: 0;
+  margin: 0;
   font-size: 1.32rem;
   border-radius: 1rem 0 0 1rem;
   background-color: black;
@@ -185,17 +189,29 @@ h6 {
   font-size: 1.2rem !important;
 }
 
+.description_image-sinups {
+  margin-right: 5rem !important;
+}
+
 .controls {
-  margin: 1rem 0.5rem 0.5rem 0.5rem;
+  margin: 0rem 1rem 0.5rem 0.5rem;
 }
 
 .fieldset-border {
+  margin-top: 1rem;
   padding: 0.5rem 1rem 1rem 1rem;
-  border: 0.4rem outset whitesmoke;
+  /* padding-left: 1rem; */
+  border: 0.3rem outset rgb(186, 186, 186);
   border-radius: 1rem;
-  /* box-shadow: inset 0 -2rem 10px 0 rgb(120, 183, 204); */
   display: flex;
   justify-content: space-evenly;
+  background: linear-gradient(
+    to top,
+    rgba(166, 166, 166, 0.479),
+    rgba(0, 0, 0, 0)
+  );
+  border-color: rgb(234, 234, 234);
+  border-radius: 1rem;
 }
 
 .fieldset-legend {
@@ -206,28 +222,51 @@ h6 {
 
 .action {
   height: 100%;
-  /* background-color: cadetblue; */
 }
 
 .btn {
-  font-size: 1rem;
-  color: rgb(240, 240, 240);
-  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--black);
+  font-weight: 700;
   background-color: inherit;
   border: none;
   cursor: pointer;
-  padding: 0.3rem 1rem;
+  padding: 1.2rem 2rem;
   vertical-align: top;
-  border-width: 0.1rem 0.5rem 0.1rem 0.5rem;
+  /* border-width: 0.1rem 0.5rem 0.1rem 0.5rem;
   border-style: none solid none solid;
-  border-radius: 1rem;
-  background-color: rgb(197, 155, 55);
-  /* box-shadow: inset 1rem -3rem 0 -2rem rgb(247, 255, 1); */
+  border-color: aliceblue; */
+  /* border: .03rem outset rgb(186, 186, 186); */
+  box-shadow: 0.3rem whitesmoke;
+  border-radius: 0.5rem;
+  background-color: rgba(197, 155, 55, 0.5);
+  /* box-shadow: inset 1rem -5vw 0 -2rem rgb(247, 255, 1); */
+  -webkit-box-shadow: 2px 2px 10px -2px var(--black);
+  box-shadow: 2px 2px 10px -2px var(--black);
+  transition: background-color 0.2s;
 }
 
-/* .start {
-
+.btn-start {
+  background-color: #99ffcc50;
 }
+
+.btn-teach {
+  background-color: #ff800050;
+}
+
+.btn:hover {
+  background-color: white;
+}
+
+/* .btn-start:hover .fieldset-border {
+  background: linear-gradient(
+    to top,
+    rgba(174, 246, 123, 0.479),
+    rgba(0, 0, 0, 0)
+  );
+} */
+
+/*
 
 .show {
 
@@ -262,21 +301,25 @@ h6 {
 .headers {
   display: flex;
   justify-content: center;
-  margin-left: 5vw;
+  /* margin-left: 5vw; */
 }
 
 .side {
   font-size: 1.2rem;
-  padding: 0.1rem;
+  /* padding: .5rem; */
 }
 
 .left-side {
+  width: 100%;
+  text-align: right;
   color: dodgerblue;
-  margin-left: 1rem;
+  /* margin-right: 0.5rem; */
 }
 
 .right-side {
+  width: 100%;
   color: darkseagreen;
+  margin-left: 5vw;
 }
 
 .visual-model {
@@ -309,7 +352,6 @@ h6 {
 }
 
 .number {
-  padding: 0.5rem;
   text-align: center;
   white-space: pre;
 }
@@ -319,6 +361,7 @@ h6 {
   font-size: 16px;
 }
 
-/* .inaccuracy-neuron {
-
-} */
+.inaccuracy-neuron {
+  text-align: right;
+  margin-bottom: 1rem;
+}
