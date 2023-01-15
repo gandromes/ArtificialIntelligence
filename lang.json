@@ -7,6 +7,10 @@
         "en": "Artificial Intelligence on JavaScript",
         "ru": "Искусственный Интеллект на JavaScript"
     },
+    "topic_min": {
+        "en": "AI on JavaScript",
+        "ru": "ИИ на JavaScript"
+    },
     "topic-1": {
         "en": "one - Neuron",
         "ru": "один - Нейрон"
