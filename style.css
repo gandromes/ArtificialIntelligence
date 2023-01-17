@@ -150,8 +150,6 @@ h6 {
 .description {
   display: flex;
   background-color: whitesmoke;
-  /* background: linear-gradient(to right, black, whitesmoke, whitesmoke,whitesmoke, whitesmoke, whitesmoke,whitesmoke); */
-  /* border: .5rem solid whitesmoke; */
   border-radius: 2rem 1rem 1rem 2rem;
   -webkit-box-shadow: 2px 2px 10px -2px var(--black);
   box-shadow: 2px 2px 10px -2px var(--black);
@@ -180,7 +178,6 @@ h6 {
   margin-left: 1vw;
   margin-right: -1.5rem;
   border-radius: 0 1rem 1rem 0;
-  /* background-color: whitesmoke !important; */
 }
 
 .description_image-sinups,
@@ -244,14 +241,9 @@ h6 {
   cursor: pointer;
   padding: 1.2rem 2rem;
   vertical-align: top;
-  /* border-width: 0.1rem 0.5rem 0.1rem 0.5rem;
-  border-style: none solid none solid;
-  border-color: aliceblue; */
-  /* border: .03rem outset rgb(186, 186, 186); */
   box-shadow: 0.3rem whitesmoke;
   border-radius: 0.5rem;
   background-color: rgba(197, 155, 55, 0.5);
-  /* box-shadow: inset 1rem -5vw 0 -2rem rgb(247, 255, 1); */
   -webkit-box-shadow: 2px 2px 10px -2px var(--black);
   box-shadow: 2px 2px 10px -2px var(--black);
   transition: background-color 0.2s;
@@ -269,62 +261,19 @@ h6 {
   background-color: white;
 }
 
-/* .btn-start:hover .fieldset-border {
-  background: linear-gradient(
-    to top,
-    rgba(174, 246, 123, 0.479),
-    rgba(0, 0, 0, 0)
-  );
-} */
-
-/*
-
-.show {
-
-}
-
-.teach {
-
-}
-
-.restart {
-
-} */
-
-.btn-start {
-}
-
-.btn-show {
-}
-
-.btn-teach {
-}
-
-.btn-restart {
-}
-
-.question {
-}
-
-.settings {
-}
-
 .headers {
   display: flex;
   justify-content: center;
-  /* margin-left: 5vw; */
 }
 
 .side {
   font-size: 1.2rem;
-  /* padding: .5rem; */
 }
 
 .left-side {
   width: 100%;
   text-align: right;
   color: dodgerblue;
-  /* margin-right: 0.5rem; */
 }
 
 .right-side {
@@ -336,8 +285,6 @@ h6 {
 .visual-model {
   width: 100%;
   height: auto;
-  /* min-width: 400px;
-  max-height: 240px; */
   background-color: #666;
   font-size: 1.6vw;
   margin: 0;
@@ -349,7 +296,6 @@ h6 {
 }
 
 .row-cell {
-  /* width: 10px; */
   background-color: #444;
   border: 1px solid #000;
 }
