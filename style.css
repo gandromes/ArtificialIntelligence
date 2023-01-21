@@ -300,6 +300,14 @@ h6 {
   border: 1px solid #000;
 }
 
+.__red {
+  background-color:brown;
+}
+
+.__yellow {
+  background-color:chocolate;
+}
+
 .__blue {
   background-color: dodgerblue;
 }

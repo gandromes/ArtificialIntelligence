@@ -1,4 +1,3 @@
-// Get json response
 const translateFileName = 'lang.json'
 
 async function getFile(fileName) {
@@ -24,15 +23,15 @@ swithTopic()
 window.addEventListener('resize', swithTopic)
 
 function swithTopic() {
-  const topic = document.querySelector("#topic-lng")
-  const topic_min = document.querySelector("#topic_min-lng")
+  const topic = document.querySelector('#topic-lng')
+  const topic_min = document.querySelector('#topic_min-lng')
   if (this.window.innerWidth > 400) {
-    topic.setAttribute("style", "display: block");
-    topic_min.setAttribute("style", "display: none");
-    return;
+    topic.setAttribute('style', 'display: block')
+    topic_min.setAttribute('style', 'display: none')
+    return
   }
-  topic.setAttribute("style", "display: none");
-  topic_min.setAttribute("style", "display: block");
+  topic.setAttribute('style', 'display: none')
+  topic_min.setAttribute('style', 'display: block')
 }
 
 function changeLanguage(...noChangeArr) {
@@ -45,7 +44,7 @@ function changeLanguage(...noChangeArr) {
     select.value = hash
     getFile(translateFileName).then((translateObject) => {
       for (key in translateObject) {
-        if (noChangeArr.includes(key)) continue;
+        if (noChangeArr.includes(key)) continue
         let item = document.querySelector('#' + key + '-lng')
         if (item) item.innerHTML = translateObject[key][hash]
       }
@@ -56,10 +55,10 @@ function changeLanguage(...noChangeArr) {
   }
 }
 
-// Neuron
+// Neuron var
 const w = [],
-  a = 0.03
-const Xn = 20,
+  a = 0.03,
+  Xn = 20,
   Yn = 10,
   N = 3,
   P = 2,
@@ -68,13 +67,166 @@ const Xn = 20,
 let buf = [],
   Ts = [],
   Results = []
-const inaccuracyElement = document.querySelector('.inaccuracy-neuron')
-const inaccuracyElementText = inaccuracyElement.innerText
 
+const inaccuracyNeuronElement = document.querySelector('.inaccuracy-neuron')
+const inaccuracyNeuronElementText = inaccuracyNeuronElement.innerText
+
+// Perceptron var
+const Nn = 9,
+  Aa = 5,
+  Ll = Xn,
+  nN = 0.5,
+  S = 200,
+  limit = [5, 4],
+  c = [
+    [0, 1, 2, 3, 4, 3, 2, 4, 1],
+    [1, 1, 1, 1, 1, 0, 0, 0, 0],
+  ],
+  colors = [
+    '__blue',
+    '__red',
+    '__green',
+    '__yellow',
+  ]
+
+let Ass = [],
+  ress = [],
+  wW = [],
+  Resultss = [],
+  Tss = []
+
+const inaccuracyPerceptronElement = document.querySelector(
+  '.inaccuracy-preceptron'
+)
+const inaccuracyPerceptronElementText = inaccuracyNeuronElement.innerText
+
+// Neuron hendlers
 Start.onclick = () => begin(3)
 Teach.onclick = () => teach(1000, 0.000001)
 Restart.onclick = () => restart()
 
+// Perceptron hendlers
+StartPerceptron.onclick = () => beginPerceptron()
+TeachPerceptron.onclick = () => teachPreceptron(1, 0.08)
+RestartPerceptron.onclick = () =>
+  processPerceptron(inaccuracyNeuronElement, inaccuracyNeuronElementText) // restartPerceptron()
+
+// Perceptron
+
+function beginPerceptron() {
+  initPerceptron()
+  cArrPerceptron(Xn, Yn)
+  shuffle(Tss)
+  processPerceptron()
+}
+
+function initPerceptron() {
+  for (let i = 0; i < Ll; i++) {
+    wW.push(new Array(Aa).fill(0))
+  }
+}
+
+function cArrPerceptron(x, y) {
+  for (let i = 0; i < x; i++) {
+    for (let j = 0; j < y; j++) {
+      Tss.push([i, j])
+    }
+  }
+}
+
+function binary(x, y) {
+  let s = '',
+    B = [x.toString(2), y.toString(2)]
+  for (let i = 0; i < B.length; i++) {
+    for (let j = 0, n = limit[i] - B[i].length; j < n; j++) {
+      s += '0'
+    }
+    s += B[i]
+  }
+  return s
+}
+
+function fillArrayXElements(x, y) {
+  let X = [],
+    string = binary(x, y)
+  for (let i = 0; i < Nn; i++) {
+    X[i] = parseInt(string[i])
+  }
+  return X
+}
+
+function perceptron(x, w) {
+  Ass = new Array(Aa).fill(0)
+  ress = new Array(Ll).fill(0)
+  let input = fillArrayXElements(x[0], x[1])
+  for (let i = 0; i < Nn; i++) {
+    Ass[c[0][i]] += input[i] * c[1][i]
+  }
+  for (let i = 0; i < Ll; i++) {
+    let s = 0
+    for (let j = 0; j < Aa; j++) {
+      s += wW[i][j] * Ass[j]
+    }
+    if (s >= x[0]) ress[i] = x[0]
+    else ress[i] = 0
+  }
+  return ress
+}
+
+function teachPreceptron(m = 1, d = 0.1) {
+  processPerceptron()
+  while (m > 0) {
+    for (let i = 0; i < S; i++) {
+      let x = Tss[i][0],
+        y = Tss[i][1],
+        per = perceptron([x, y], wW)
+      for (let j = 0; j < Ll; j++) {
+        if (j + 1 == x) {
+          let b = x - per[j]
+          for (let k = 0; k < Aa; k++) {
+            wW[j][k] += b * d * Ass[k]
+          }
+        }
+      }
+    }
+    m--
+  }
+  processPerceptron()
+}
+
+function processPerceptron() {
+  let i = 0
+  for (let y = 1; y <= Yn; y++) {
+    for (let x = 1; x <= Xn; x++) {
+      Resultss[i++] = mark(
+        document.querySelector('.perceptronDemo'),
+        perceptron([x, y], wW),
+        x,
+        y
+      )
+    }
+  }
+}
+
+function restartPerceptron(table) {
+  wW.length = 0
+  Tss.length = 0
+  Ass = []
+  ress = []
+  wW = []
+  Resultss = []
+  // inaccuracyNeuronElement.innerHTML = inaccuracyNeuronElementText
+  const Table = table.querySelectorAll('.row')
+  for (let x = 0; x <= Xn; x++) {
+    for (let y = 1; y <= Yn; y++) {
+      Table[y].children[x].removeAttribute('class')
+      Table[y].children[x].setAttribute('class', 'row-cell')
+    }
+  }
+  return
+}
+
+// Neuron
 function init(n) {
   for (let i = 0; i < n; i++) {
     w[i] = Math.random()
@@ -90,7 +242,7 @@ function neuron(x, w) {
 }
 
 function teach(e = 1, n = 0.001) {
-  process(inaccuracyElement, inaccuracyElementText)
+  process(inaccuracyNeuronElement, inaccuracyNeuronElementText)
   while (e > 0) {
     for (let i = 0; i < Ts.length; i++) {
       let b = Ts[i][2] - neuron([Ts[i][0], Ts[i][1], 1], w)
@@ -103,25 +255,14 @@ function teach(e = 1, n = 0.001) {
     }
     e--
   }
-  process(inaccuracyElement, inaccuracyElementText)
+  process(inaccuracyNeuronElement, inaccuracyNeuronElementText)
 }
 
 function cArr(x, y) {
   for (let i = 0; i < x; i++) {
     for (let j = 0; j < y; j++) {
-      buf.push([j, i, i <= Xn / P ? L : R])
+      Ts.push([j, i, i <= Xn / P ? L : R])
     }
-  }
-}
-
-function shuffle(b) {
-  for (let i = b.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
-    ;[b[i], b[j]] = [b[j], b[i]]
-  }
-
-  for (let a = 0; a < buf.length; a++) {
-    Ts[a] = b[a]
   }
 }
 
@@ -132,12 +273,30 @@ function answer(o) {
   return true
 }
 
-function mark(out, x, y) {
-  const Table = document.querySelectorAll('.row')[y].children[x - 1].classList
-  if (out == false) {
-    Table.toggle('__blue')
-  } else {
-    Table.toggle('__green')
+function mark(table, out, x, y) {
+  const Table = table.querySelectorAll('.row')[y].children[x - 1].classList
+  switch (table.className.split(' ').at(-1)) {
+    case 'neuronDemo':
+      if (out == false) {
+        Table.toggle(colors[0])
+      } else {
+        Table.toggle(colors[2])
+      }
+      break
+    case 'perceptronDemo':
+      function condition(c1, c2) {
+        if (out[x - 1] == x) {
+          Table.toggle(c1)
+        } else {
+          Table.toggle(c2)
+        }
+      }
+      if (x <= 10) {
+        condition(colors[0], colors[1])
+      } else {
+        condition(colors[2], colors[3])
+      }
+      break
   }
   return out
 }
@@ -146,7 +305,12 @@ function process(apdateElement, ElementText) {
   let i = 0
   for (let y = 1; y <= Yn; y++) {
     for (let x = 1; x <= Xn; x++) {
-      Results[i++] = mark(answer(neuron([x, y, 1], w)), x, y)
+      Results[i++] = mark(
+        document.querySelector('.neuronDemo'),
+        answer(neuron([x, y, 1], w)),
+        x,
+        y
+      )
     }
   }
   const inaccurancy = calculateInaccuracy(Results)
@@ -156,13 +320,12 @@ function process(apdateElement, ElementText) {
 function restart() {
   w.length = 0
   Ts.length = 0
-  buf.length = 0
-  inaccuracyElement.innerHTML = inaccuracyElementText
+  const Table = document.querySelectorAll('.row')
+  inaccuracyNeuronElement.innerHTML = inaccuracyNeuronElementText
   for (let x = 0; x < Xn; x++) {
     for (let y = 1; y <= Yn; y++) {
-      const Table = document.querySelectorAll('.row')[y].children[x]
-      Table.removeAttribute('class')
-      Table.setAttribute('class', 'row-cell')
+      Table[y].children[x].removeAttribute('class')
+      Table[y].children[x].setAttribute('class', 'row-cell')
     }
   }
   writeBound()
@@ -173,8 +336,8 @@ function begin(n) {
   writeBound()
   init(n)
   cArr(Xn, Yn)
-  shuffle(buf)
-  process(inaccuracyElement, inaccuracyElementText)
+  shuffle(Ts)
+  process(inaccuracyNeuronElement, inaccuracyNeuronElementText)
 }
 
 function calculateInaccuracy(resultsArray) {
@@ -216,8 +379,17 @@ function calculateInaccuracy(resultsArray) {
 
 function writeBound() {
   for (let i = 1; i <= Yn; i++) {
-    mark(false, 10, i)
-    mark(true, 11, i)
+    mark(document.querySelector('.neuronDemo'), false, 10, i)
+    mark(document.querySelector('.neuronDemo'), true, 11, i)
   }
 }
 writeBound()
+
+// General func
+
+function shuffle(b) {
+  for (let i = b.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1))
+    ;[b[i], b[j]] = [b[j], b[i]]
+  }
+}
