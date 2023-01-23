@@ -98,6 +98,10 @@ h6 {
   display: inline;
 }
 
+.title-yellow {
+
+}
+
 .topic {
   display: inline-block;
   position: relative;
@@ -118,6 +122,10 @@ h6 {
   z-index: 2;
 }
 
+.title-yellow .topic::after {
+  background-color: #cfff7f;
+}
+
 .topic::before {
   content: '';
   background-color: aquamarine;
@@ -129,6 +137,10 @@ h6 {
   top: 0;
   left: 0;
   z-index: 3;
+}
+
+.title-yellow .topic::before {
+  background-color: #96ff7f;
 }
 
 .topic-psudo::before {
@@ -156,14 +168,29 @@ h6 {
 }
 
 .description_text {
-  white-space: pre-wrap;
+  display: flex;
+	flex-direction: column;
+  justify-content: center;
   padding: 2rem;
-  padding-bottom: 0;
+	padding-bottom: 2vw;
   margin: 0;
-  font-size: 1.32rem;
+  font-size: 1.44rem;
   border-radius: 1rem 0 0 1rem;
   background-color: black;
   flex: 1 1 auto;
+}
+
+.perceptron_text {
+  font-size: 1.32rem;
+}
+
+.description_text p {
+  white-space: pre-wrap;
+}
+
+.description_text small {
+  display: inline-block;
+  margin-top: 1vw;
 }
 
 .description_image {
@@ -328,11 +355,6 @@ h6 {
 
 .inaccuracy-neuron {
   text-align: right;
-  margin-bottom: 1rem;
-}
-
-.block + .block {
-  margin-top: 2rem;
 }
 
 /* Media */
@@ -344,8 +366,7 @@ h6 {
 
 @media (max-width: 1100px) {
   .description_text {
-    padding: 1.85rem;
-    font-size: 1.7vw;
+    font-size: 1.8vw;
   }
 }
 
@@ -366,6 +387,7 @@ h6 {
   }
   .description_text {
     font-size: 1.1rem;
+    padding: 1.85rem;
     border-radius: 1rem 1rem 0 0;
   }
   .description_image {

@@ -32,8 +32,12 @@
         "ru": "Правая сторона"
     },
     "inaccuracyNeuron": {
-        "en": "Inaccuracy in the responses neuron: 0%",
-        "ru": "Погрешность в ответах нейрона: 0%"  
+        "en": "Inaccuracy in the responses neuron: ",
+        "ru": "Погрешность в ответах нейрона: "  
+    },
+    "inaccuracyPerceptron-lng": {
+        "en": "Inaccuracy in the responses perceptron: ",
+        "ru": "Погрешность в ответах персептрона: "  
     },
     "image-dendrits": {
         "en": "Dendrites (inputs)",
@@ -52,11 +56,31 @@
         "ru": "Аксон (функция активации)"
     },
     "image-exit": {
-        "en": "Exit",
+        "en": "Output",
         "ru": "Выход"
     },
     "description_text": {
         "en": "A neural network of one neuron is the simplest one-layer network consisting of:\n• 3 data inputs\n\t• X1 X2 like X, Y\n\t• X3 as a constant = 1\n• 3 weight coefficients (W1 W2 W3)\n• 1 neuron (S)\n• 1 axon (used Sigmoid)\n\t• slope factor = 0.03",
         "ru": "Неронная сеть из одного нейрона это однослойная простейшая сеть состояшия из:\n• 3 входныx данных (X1 X2 X3)\n\t• X1 X2 как X, Y\n\t• X3 как постоянная = 1\n• 3 весовых коэффициетов (W1 W2 W3)\n• 1 нейрона (S)\n• 1 аксона (использовался Сигмойд)\n\t• коэффициент наклона функции = 0.03"
+    },
+    "descriptionPerceptron_text": {
+        "en": "A neural network consisting of one perceptron is a single-layer network consisting of: \n  var xB = toBinary(max(x)).length, // x = 0..20\n\tyB = toBinary(max(y)).length  // y = 0..10\n• 9 touch elements (X1...X9)\n\t• xB + yB == 4(1111) + 5(11111) = 9\n• 5 associative elements (A1...A5)\n\t• xB > yB ? first : second == 4 > 5 ? 4 : 5\n• 20 neuron (S)",
+        "ru": "Нейронная сеть, состоящая из одного персептрона, представляет собой однослойную сеть, состоящую из: \n  var xB = toBinary(max(x)).length, // x = 0..20\n\tyB = toBinary(max(y)).length  // y = 0..10\n• 9 сенсорных элементов (X1...X9)\n\t• xB + yB == 4(1111) + 5(11111) = 9\n• 5 ассоциативных элементов (A1...A5)\n\t• xB > yB ? первый : второй == 4 > 5 ? 4 : 5\n• 20 нейронов (S)"
+    },
+    "descriptionPerceptron_text-small": {
+        "en": "for clarity, it was worsened by 50 times",
+        "ru": "для наглядности ухудшили в 50 раз"
+    },
+    "control_btn-start": {
+        "en": "start",
+        "ru": "старт"
+    },
+    "control_btn-teach": {
+        "en": "teach",
+        "ru": "учить"
+    },
+    "control_btn-again": {
+        "en": "again",
+        "ru": "снова"
     }
 }
