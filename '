@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title-lng">The simplest artificial intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <h1 id="topic-lng" class="major-topic">Artificial Intelligence on JavaScript</h1>
+          <h1 id="topic_min-lng" class="major-topic" style="display: none;">AI on JavaScript</h1>
+          <select class="change-lang">
+            <option value="ru">RU</option>
+            <option value="en">EN</option>
+          </select>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+      <div class="container">
+        <section class="block">
+          <div class="title">
+            <h2 id="topic-1-lng" class="topic">one - Neuron</h2>
+            <span class="topic topic-psudo">&#8196;</span>
+          </div>
+
+          <div class="description">
+				    <div class="description_text">
+				      <p id="description_text-lng">A neural network of one neuron is the simplest one-layer network consisting of: 
+      • 3 data inputs (X<sub>1</sub> X<sub>2</sub> X<sub>3</sub>)
+          • X<sub>1</sub> X<sub>2</sub> like X, Y
+          • X<sub>3</sub> as a constant = 1
+      • 3 weight coefficients (W<sub>1</sub> W<sub>2</sub> W<sub>3</sub>)
+      • 1 neuron (<b>S</b>)
+      • 1 axon (used <b>Sigmoid</b>)
+          • slope factor = 0.03
+              </p>
+				    </div>
+            <svg viewBox="0 0 570 370" class="description_image"
+            preserveAspectRatio="xMidYMin meet">
+              <defs>
+                <filter id="dropShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"></feGaussianBlur><feOffset in="blur" dx="3" dy="3" result="offsetBlur"></feOffset><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feFlood><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite><feBlend in="SourceGraphic" in2="offsetBlur"></feBlend></filter>
+              </defs>
+              <g transformorigin="0 0" transform="scale(1,1)translate(-136,-92)" class="description_image-scale_svg"><g></g><g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 241 195.5 L 400 195.5 L 400 219.13" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 241 195.5 L 400 195.5 L 400 219.13" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 400 224.38 L 396.5 217.38 L 400 219.13 L 403.5 217.38 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><ellipse cx="225.5" cy="195.5" rx="15.5" ry="15.5" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all" class="description_image-circly-dendrits"></ellipse></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 29px; height: 1px; padding-top: 198px; margin-left: 211px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-circly-dendrits-h">X<sub style="font-size: 16px;">1</sub></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 241 265.5 L 353.63 265.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 241 265.5 L 353.63 265.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 358.88 265.5 L 351.88 269 L 353.63 265.5 L 351.88 262 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><ellipse cx="225.5" cy="265.5" rx="15.5" ry="15.5" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all" class="description_image-circly-dendrits"></ellipse></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 29px; height: 1px; padding-top: 268px; margin-left: 211px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-circly-dendrits-h">X<sub>2</sub></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 241 335.5 L 400 335.5 L 400 311.87" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 241 335.5 L 400 335.5 L 400 311.87" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 400 306.62 L 403.5 313.62 L 400 311.87 L 396.5 313.62 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><ellipse cx="225.5" cy="335.5" rx="15.5" ry="15.5" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all" class="description_image-circly-dendrits"></ellipse></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 29px; height: 1px; padding-top: 338px; margin-left: 211px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-circly-dendrits-h">X<sub>3</sub></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 188.25 412.5 L 168.3 412.5 L 168.3 195.5 L 203.63 195.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 188.25 412.5 L 168.3 412.5 L 168.3 195.5 L 203.63 195.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 208.88 195.5 L 201.88 199 L 203.63 195.5 L 201.88 192 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 188.25 425 L 168.3 425 L 168.3 265.5 L 203.63 265.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 188.25 425 L 168.3 425 L 168.3 265.5 L 203.63 265.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 208.88 265.5 L 201.88 269 L 203.63 265.5 L 201.88 262 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 188.25 437.5 L 168.3 437.5 L 168.3 335.5 L 203.63 335.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 188.25 437.5 L 168.3 437.5 L 168.3 335.5 L 203.63 335.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 208.88 335.5 L 201.88 339 L 203.63 335.5 L 201.88 332 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="188.25" y="400" width="121.75" height="50" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="188.25" y="400" width="121.75" height="50" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 120px; height: 1px; padding-top: 425px; margin-left: 189px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-dendrits"><div id="image-dendrits-lng">Дендриты (входы)</div></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 440 265.5 L 548.63 265.5" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 440 265.5 L 548.63 265.5" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 553.88 265.5 L 546.88 269 L 548.63 265.5 L 546.88 262 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><ellipse cx="400" cy="265.5" rx="40" ry="40" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all" class="description_image-circly-neuron"></ellipse></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 266px; margin-left: 361px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 class="description_image-circly-neuron-h">S</h1></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 231.5 140 L 231.5 160 L 310 160 L 310 163.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 231.5 140 L 231.5 160 L 310 160 L 310 163.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 310 168.88 L 306.5 161.88 L 310 163.63 L 313.5 161.88 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="144" y="100" width="350" height="40" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="144" y="100" width="350" height="40" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 348px; height: 1px; padding-top: 120px; margin-left: 145px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-sinups" id="image-synapses-lng">Синапсы (весовой коэффициент)</div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 310 200 L 310 233.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 310 200 L 310 233.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 310 238.88 L 306.5 231.88 L 310 233.63 L 313.5 231.88 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="280" y="170" width="60" height="30" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="280" y="170" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 185px; margin-left: 281px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">w<sub>1</sub></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 310 270 L 310 299.13" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 310 270 L 310 299.13" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 310 304.38 L 306.5 297.38 L 310 299.13 L 313.5 297.38 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="280" y="240" width="60" height="30" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="280" y="240" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 255px; margin-left: 281px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">w<sub>2</sub></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="280" y="305.5" width="60" height="30" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="280" y="305.5" width="60" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 321px; margin-left: 281px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;"><div>w<sub>3</sub></div></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 490 390 L 490 330 L 430 330 L 430 298.33" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 490 390 L 490 330 L 430 330 L 430 298.33" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 430 293.08 L 433.5 300.08 L 430 298.33 L 426.5 300.08 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="360" y="390" width="260" height="40" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="360" y="390" width="260" height="40" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 258px; height: 1px; padding-top: 410px; margin-left: 361px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-summator" id="image-adder-lng">Сумматор (нейронная клетка)</div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><ellipse cx="575.5" cy="265.5" rx="20.5" ry="20.5" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all" class="description_image-circly-exit"></ellipse></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 39px; height: 1px; padding-top: 266px; margin-left: 556px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: #000000; "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3 class="description_image-circly-exit-h">Y</h3></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 470 250 L 510 250 L 520 265 L 510 280 L 470 280 L 480 265 Z" fill="#66ffff" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all" class="description_image-figure-akson"></path></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 48px; height: 1px; padding-top: 265px; margin-left: 471px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: #000000; "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h5 class="description_image-figure-akson-h">f</h5></div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 495 170 L 495 243.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 495 170 L 495 243.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 495 248.88 L 491.5 241.88 L 495 243.63 L 498.5 241.88 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="355" y="151" width="280" height="19" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="355" y="151" width="280" height="19" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 278px; height: 1px; padding-top: 161px; margin-left: 356px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: #000000; "><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-akson" id="image-axon-lng">Аксон (функция активации)</div></div></div></foreignObject></g></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><path d="M 625 219 L 625 239 L 590 239 L 590 244.64" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 625 219 L 625 239 L 590 239 L 590 244.64" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 590 249.89 L 586.5 242.89 L 590 244.64 L 593.5 242.89 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g style="visibility: visible;" transform="translate(0.5,0.5)"><rect x="570" y="190" width="110" height="29" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="570" y="190" width="110" height="29" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 205px; margin-left: 571px;"><div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: #000000; "><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;" class="description_image-exit" id="image-exit-lng">Выход</div></div></div></foreignObject></g></g></g><g></g><g></g></g>
+            </svg>	
+          </div>
+          
+          <form class="controls">
+            <fieldset class="fieldset-border">
+              <legend id="legend-1-lng" class="fieldset-legend">neuron controls</legend>
+              <div class="start action">
+                <button type="button" class="btn btn-start Start" id="control_btn-start-lng">start</button>
+              </div>
+              <div class="teach action">
+                <button type="button" class="btn btn-teach Teach" id="control_btn-teach-lng">teach</button>
+              </div>
+              <div class="restart action">
+                <button type="button" class="btn btn-restart Again" id="control_btn-again-lng">again</button>
+              </div>
+            </fieldset>  
+          </form>
+
+          <hgroup class="headers">
+            <h3 id="left-side-lng" class="left-side side">Left side</h3>
+            <h3 id="right-side-lng" class="right-side side">Right side</h3>
+          </hgroup>
+
+          <table class="visual-model neuronDemo">
+            <tr class="row">
+              <td class="number">01</td>
+              <td class="number">02</td>
+              <td class="number">03</td>
+              <td class="number">04</td>
+              <td class="number">05</td>
+              <td class="number">06</td>
+              <td class="number">07</td>
+              <td class="number">08</td>
+              <td class="number">09</td>
+              <td class="number">10</td>
+              <td class="number">11</td>
+              <td class="number">12</td>
+              <td class="number">13</td>
+              <td class="number">14</td>
+              <td class="number">15</td>
+              <td class="number">16</td>
+              <td class="number">17</td>
+              <td class="number">18</td>
+              <td class="number">19</td>
+              <td class="number">20</td>
+            </tr> 
+            <tr class="row">
+              <!-- <td class="number number-col">01</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">02</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">03</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">04</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number  number-col">05</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">06</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">07</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">08</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">09</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">10</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+          </table>
+
+          <h4 id="inaccuracyNeuron-lng" class="inaccuracy inaccuracy-neuron">Inaccuracy in the responses neuron:&#8196</h4>
+        </section>
+
+        <section class="block">
+          <div class="title title-yellow">
+            <h2 id="topic-1-lng" class="topic">one - Neuron</h2>
+            <span class="topic topic-psudo">&#8196;</span>
+          </div>
+
+          <div class="description">
+            <div class="description_text perceptron_text">
+						  <p id="descriptionPerceptron_text-lng">A neural network consisting of one perceptron is a single-layer network consisting of: 
+• 9 touch elements (X<sub>1</sub> ... X<sub>9</sub>)
+  • toBit( max(X) ).length + toBit( max(x) ).length
+  • 4(1111) + 5(11111) = 9
+• 9 weight coefficients (W<sub>1</sub> ... W<sub>9</sub>)
+• 5 associative elements (A<sub>1</sub> ... A<sub>5</sub>)
+  • toBit( max(X) ).length > toBit( max(x) ).length ? first : second
+  • 4 > 5 ? 4 : 5
+• 20 neuron (<b>S</b>)  
+							</p>
+              <small id="descriptionPerceptron_text-small-lng" style="color: #666"><b>for clarity, it was worsened by 50 times</b></small>
+            </div>
+						<svg style="#fff;" viewBox="0 0 570 370"class="description_image" preserveAspectRatio="xMidYMin meet"><defs><filter id="dropShadow"><feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"></feGaussianBlur><feOffset in="blur" dx="3" dy="3" result="offsetBlur"></feOffset><feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feFlood><feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite><feBlend in="SourceGraphic" in2="offsetBlur"></feBlend></filter></defs><g transformOrigin="0 0" transform="scale(1,1)translate(-172,-115)"><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 208 L 370 208 L 370 226.13" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 208 L 370 208 L 370 226.13" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 370 231.38 L 366.5 224.38 L 370 226.13 L 373.5 224.38 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="208" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 210px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 410 252.5 L 410 226 L 517.38 226" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 410 252.5 L 410 226 L 517.38 226" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 226 L 515.63 229.5 L 517.38 226 L 515.63 222.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 420 252.5 L 420 239 L 517.38 239" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 420 252.5 L 420 239 L 517.38 239" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 239 L 515.63 242.5 L 517.38 239 L 515.63 235.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 391 253 L 390 253 L 390 252 L 517.38 252" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 391 253 L 390 253 L 390 252 L 517.38 252" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 252 L 515.63 255.5 L 517.38 252 L 515.63 248.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 420 252.5 L 420 265 L 517.38 265" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 420 252.5 L 420 265 L 517.38 265" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 265 L 515.63 268.5 L 517.38 265 L 515.63 261.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 410 252.5 L 410 278 L 517.38 278" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 410 252.5 L 410 278 L 517.38 278" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 278 L 515.63 281.5 L 517.38 278 L 515.63 274.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 291 L 517.38 291" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 291 L 517.38 291" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 291 L 515.63 294.5 L 517.38 291 L 515.63 287.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 304 L 517.38 304" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 304 L 517.38 304" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 304 L 515.63 307.5 L 517.38 304 L 515.63 300.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 317 L 517.38 317" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 317 L 517.38 317" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 317 L 515.63 320.5 L 517.38 317 L 515.63 313.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 330 L 517.38 330" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 330 L 517.38 330" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 330 L 515.63 333.5 L 517.38 330 L 515.63 326.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 343 L 517.38 343" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 343 L 517.38 343" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 343 L 515.63 346.5 L 517.38 343 L 515.63 339.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 356 L 517.38 356" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 356 L 517.38 356" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 356 L 515.63 359.5 L 517.38 356 L 515.63 352.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 368 L 517.38 368" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 368 L 517.38 368" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 368 L 515.63 371.5 L 517.38 368 L 515.63 364.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 381 L 517.38 381" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 381 L 517.38 381" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 381 L 515.63 384.5 L 517.38 381 L 515.63 377.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 394 L 517.38 394" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 394 L 517.38 394" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 394 L 515.63 397.5 L 517.38 394 L 515.63 390.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 407 L 517.38 407" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 407 L 517.38 407" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 407 L 515.63 410.5 L 517.38 407 L 515.63 403.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 420 L 517.38 420" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 420 L 517.38 420" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 420 L 515.63 423.5 L 517.38 420 L 515.63 416.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 433 L 517.38 433" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 433 L 517.38 433" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 433 L 515.63 436.5 L 517.38 433 L 515.63 429.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 446 L 517.38 446" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 446 L 517.38 446" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 446 L 515.63 449.5 L 517.38 446 L 515.63 442.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 213 L 517.38 213" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 213 L 517.38 213" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 213 L 515.63 216.5 L 517.38 213 L 515.63 209.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 459 L 517.38 459" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 459 L 517.38 459" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 459 L 515.63 462.5 L 517.38 459 L 515.63 455.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 226 L 517.38 226" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 226 L 517.38 226" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 226 L 515.63 229.5 L 517.38 226 L 515.63 222.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 239 L 517.38 239" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 239 L 517.38 239" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 239 L 515.63 242.5 L 517.38 239 L 515.63 235.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 265 L 517.38 265" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 265 L 517.38 265" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 265 L 515.63 268.5 L 517.38 265 L 515.63 261.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 400 252.5 L 400 278 L 517.38 278" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 400 252.5 L 400 278 L 517.38 278" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 278 L 515.63 281.5 L 517.38 278 L 515.63 274.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 410 252.5 L 410 213 L 517.38 213" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 410 252.5 L 410 213 L 517.38 213" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 213 L 515.63 216.5 L 517.38 213 L 515.63 209.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 420 252.5 L 420 213 L 517.38 213" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 420 252.5 L 420 213 L 517.38 213" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 213 L 515.63 216.5 L 517.38 213 L 515.63 209.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 420 252.5 L 420 459 L 517.38 459" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 420 252.5 L 420 459 L 517.38 459" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 459 L 515.63 462.5 L 517.38 459 L 515.63 455.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 410 252.5 L 410 459 L 517.38 459" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 410 252.5 L 410 459 L 517.38 459" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 459 L 515.63 462.5 L 517.38 459 L 515.63 455.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 430 252.5 L 430 213 L 517.38 213" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 430 252.5 L 430 213 L 517.38 213" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 213 L 515.63 216.5 L 517.38 213 L 515.63 209.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390 252.5 L 430 252.5 L 430 459 L 517.38 459" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390 252.5 L 430 252.5 L 430 459 L 517.38 459" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 459 L 515.63 462.5 L 517.38 459 L 515.63 455.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="370" cy="252.5" rx="20" ry="20" fill="#fff100" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 253px; margin-left: 351px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3>Y</h3></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 223.69 175 L 203.3 175 L 203.27 186.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 223.69 175 L 203.3 175 L 203.27 186.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 203.25 191.88 L 199.77 184.87 L 203.27 186.63 L 206.77 184.89 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="188.25" y="155" width="141.75" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="188.25" y="155" width="141.75" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 140px; height: 1px; padding-top: 165px; margin-left: 189px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">Сенсорные&nbsp;</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 220 242.4 L 290 242.4 L 290 297 L 350 297 L 350 297.64" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 220 242.4 L 290 242.4 L 290 297 L 350 297 L 350 297.64" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 350 302.89 L 346.5 295.89 L 350 297.64 L 353.5 295.89 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="204.13" cy="242.38" rx="15.875" ry="15.875" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 30px; height: 1px; padding-top: 244px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 275 L 280 275 L 280 341 L 343.63 341" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 275 L 280 275 L 280 341 L 343.63 341" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 341 L 341.88 344.5 L 343.63 341 L 341.88 337.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="275" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 277px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 308 L 280 308 L 280 385 L 343.63 385" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 308 L 280 308 L 280 385 L 343.63 385" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 385 L 341.88 388.5 L 343.63 385 L 341.88 381.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="308" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 310px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 213.45 330 L 270 330 L 270 429 L 343.63 429" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 213.45 330 L 270 330 L 270 429 L 343.63 429" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 429 L 341.88 432.5 L 343.63 429 L 341.88 425.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="341" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 343px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 374.5 L 250 374.5 L 250 341 L 343.63 341" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 374.5 L 250 374.5 L 250 341 L 343.63 341" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 341 L 341.88 344.5 L 343.63 341 L 341.88 337.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="374.5" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 377px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 408 L 280 408 L 280 385 L 343.63 385" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 408 L 280 408 L 280 385 L 343.63 385" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 385 L 341.88 388.5 L 343.63 385 L 341.88 381.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="408" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 410px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.22 440 L 290 440 L 290 297 L 343.63 297" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.22 440 L 290 440 L 290 297 L 343.63 297" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 348.88 297 L 341.88 300.5 L 343.63 297 L 341.88 293.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="441" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 443px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 218.25 473 L 370.5 473 L 370.5 455.87" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 218.25 473 L 370.5 473 L 370.5 455.87" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 370.5 450.62 L 374 457.62 L 370.5 455.87 L 367 457.62 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="203.25" cy="473" rx="15" ry="15" fill="#99ffcc" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 28px; height: 1px; padding-top: 475px; margin-left: 189px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">X</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 417.88 140 L 419.2 140 L 419.18 149.01" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 417.88 140 L 419.2 140 L 419.18 149.01" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 419.16 154.26 L 415.68 147.25 L 419.18 149.01 L 422.68 147.27 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 536.81 140 L 536.8 150 L 536.61 148.18" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 536.81 140 L 536.8 150 L 536.61 148.18" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 537.15 153.41 L 532.96 146.8 L 536.61 148.18 L 539.92 146.09 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 298.94 140 L 299.19 148.15" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 298.94 140 L 299.19 148.15" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 299.35 153.4 L 295.64 146.51 L 299.19 148.15 L 302.63 146.3 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="180" y="130" width="475.75" height="10" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="180" y="130" width="475.75" height="10" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 474px; height: 1px; padding-top: 135px; margin-left: 181px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;"><font style="font-size: 20px;">Элементы однослойного персептрона</font></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 400.9 175 L 400.9 190 L 384.1 190 L 384.14 231.99" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 400.9 175 L 400.9 190 L 384.1 190 L 384.14 231.99" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 384.14 237.24 L 380.64 230.24 L 384.14 231.99 L 387.64 230.24 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="330" y="155" width="141.75" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="330" y="155" width="141.75" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 140px; height: 1px; padding-top: 165px; margin-left: 331px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">Ассоциативные</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 543 175 L 543 190 L 529.8 190 L 529.77 200.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 543 175 L 543 190 L 529.8 190 L 529.77 200.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 529.75 205.88 L 526.27 198.87 L 529.77 200.63 L 533.27 198.89 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="471.75" y="155" width="188.25" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="471.75" y="155" width="188.25" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 186px; height: 1px; padding-top: 165px; margin-left: 473px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; overflow-wrap: normal;">Реагирующие (нейрон)</div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 391 297 L 400 297 L 400 226 L 517.38 226" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 391 297 L 400 297 L 400 226 L 517.38 226" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 226 L 515.63 229.5 L 517.38 226 L 515.63 222.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 391 297 L 400 297 L 400 226 L 517.38 226" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 391 297 L 400 297 L 400 226 L 517.38 226" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 226 L 515.63 229.5 L 517.38 226 L 515.63 222.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 391 297 L 400 297 L 400 239 L 517.38 239" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 391 297 L 400 297 L 400 239 L 517.38 239" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 239 L 515.63 242.5 L 517.38 239 L 515.63 235.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="370.5" cy="297" rx="20.5" ry="20.5" fill="#fff100" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 39px; height: 1px; padding-top: 297px; margin-left: 351px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3>Y</h3></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390.9 343 L 420 343 L 517.38 343" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390.9 343 L 420 343 L 517.38 343" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 343 L 515.63 346.5 L 517.38 343 L 515.63 339.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="370.5" cy="341" rx="20.5" ry="20.5" fill="#fff100" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 39px; height: 1px; padding-top: 341px; margin-left: 351px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3>Y</h3></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 391 385 L 400 385 L 400 381 L 517.38 381" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 391 385 L 400 385 L 400 381 L 517.38 381" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 381 L 515.63 384.5 L 517.38 381 L 515.63 377.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="370.5" cy="385" rx="20.5" ry="20.5" fill="#fff100" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 39px; height: 1px; padding-top: 385px; margin-left: 351px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3>Y</h3></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 390.61 433 L 400 433 L 517.38 433" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 390.61 433 L 400 433 L 517.38 433" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 522.63 433 L 515.63 436.5 L 517.38 433 L 515.63 429.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="370.5" cy="429" rx="20.5" ry="20.5" fill="#fff100" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 39px; height: 1px; padding-top: 429px; margin-left: 351px;"><div data-drawio-colors="color: #000000; " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 17px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h3>Y</h3></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 459 L 603.63 459" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 459 L 603.63 459" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 459 L 601.88 462.5 L 603.63 459 L 601.88 455.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="459" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 459px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 446 L 603.63 446" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 446 L 603.63 446" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 446 L 601.88 449.5 L 603.63 446 L 601.88 442.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="446" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 446px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 433 L 603.63 433" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 433 L 603.63 433" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 433 L 601.88 436.5 L 603.63 433 L 601.88 429.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="433" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 433px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 420 L 603.63 420" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 420 L 603.63 420" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 420 L 601.88 423.5 L 603.63 420 L 601.88 416.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="420" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 420px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 407 L 603.63 407" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 407 L 603.63 407" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 407 L 601.88 410.5 L 603.63 407 L 601.88 403.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="407" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 407px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 394 L 603.63 394" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 394 L 603.63 394" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 394 L 601.88 397.5 L 603.63 394 L 601.88 390.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="394" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 394px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 381 L 603.63 381" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 381 L 603.63 381" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 381 L 601.88 384.5 L 603.63 381 L 601.88 377.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="381" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 381px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 368 L 603.63 368" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 368 L 603.63 368" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 368 L 601.88 371.5 L 603.63 368 L 601.88 364.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="368" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 368px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 356 L 603.63 356" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 356 L 603.63 356" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 356 L 601.88 359.5 L 603.63 356 L 601.88 352.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="356" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 356px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 343 L 603.63 343" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 343 L 603.63 343" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 343 L 601.88 346.5 L 603.63 343 L 601.88 339.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="343" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 343px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 330 L 603.63 330" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 330 L 603.63 330" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 330 L 601.88 333.5 L 603.63 330 L 601.88 326.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="330" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 330px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 317 L 603.63 317" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 317 L 603.63 317" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 317 L 601.88 320.5 L 603.63 317 L 601.88 313.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="317" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 317px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 304 L 603.63 304" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 304 L 603.63 304" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 304 L 601.88 307.5 L 603.63 304 L 601.88 300.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="304" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 304px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 291 L 603.63 291" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 291 L 603.63 291" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 291 L 601.88 294.5 L 603.63 291 L 601.88 287.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="291" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 291px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 278 L 603.63 278" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 278 L 603.63 278" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 278 L 601.88 281.5 L 603.63 278 L 601.88 274.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="278" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 278px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 265 L 572.9 265 L 603.63 264.89" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 265 L 572.9 265 L 603.63 264.89" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 264.87 L 601.9 268.39 L 603.63 264.89 L 601.87 261.39 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="265" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 265px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 252 L 603.63 252" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 252 L 603.63 252" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 252 L 601.88 255.5 L 603.63 252 L 601.88 248.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="252" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 252px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 239 L 603.63 239" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 239 L 603.63 239" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 239 L 601.88 242.5 L 603.63 239 L 601.88 235.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="239" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 239px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 226 L 603.63 226" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 226 L 603.63 226" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 226 L 601.88 229.5 L 603.63 226 L 601.88 222.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="226" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 226px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 535.75 213 L 603.63 213" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 535.75 213 L 603.63 213" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 608.88 213 L 601.88 216.5 L 603.63 213 L 601.88 209.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><ellipse cx="529.75" cy="213" rx="6" ry="6" fill="#ff8000" stroke="rgb(0, 0, 0)" pointer-events="all"></ellipse></g><g style=""><g><foreignObject pointer-events="none" width="100%" height="100%" style="overflow: visible; text-align: left;"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 10px; height: 1px; padding-top: 213px; margin-left: 525px;"><div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;"><div style="display: inline-block; font-size: 18px; font-family: Tahoma; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;"><h1 style=""><span style="background-color: initial; font-size: 14px; font-weight: normal;">r</span><br></h1><div><font size="3"><br></font></div></div></div></div></foreignObject></g></g></g><g></g><g></g></g>
+						</svg>
+          </div>
+          
+          <form class="controls">
+            <fieldset class="fieldset-border">
+              <legend id="legend-1-lng" class="fieldset-legend">neuron controls</legend>
+              <div class="start action">
+                <button type="button" class="btn btn-start StartPerceptron" id="control_btn-start-lng">start</button>
+              </div>
+              <div class="teach action">
+                <button type="button" class="btn btn-teach TeachPerceptron" id="control_btn-teach-lng">teach</button>
+              </div>
+              <div class="restart action">
+                <button type="button" class="btn btn-restart AgainPerceptron" id="control_btn-again-lng">again</button>
+              </div>
+            </fieldset>  
+          </form>
+
+          <hgroup class="headers">
+            <h3 id="left-side-lng" class="left-side side">Left side</h3>
+            <h3 id="right-side-lng" class="right-side side">Right side</h3>
+          </hgroup>
+
+          <table class="visual-model perceptronDemo">
+            <tr class="row">
+              <!-- <td class="number number-col">00</td> -->
+              <td class="number">01</td>
+              <td class="number">02</td>
+              <td class="number">03</td>
+              <td class="number">04</td>
+              <td class="number">05</td>
+              <td class="number">06</td>
+              <td class="number">07</td>
+              <td class="number">08</td>
+              <td class="number">09</td>
+              <td class="number">10</td>
+              <td class="number">11</td>
+              <td class="number">12</td>
+              <td class="number">13</td>
+              <td class="number">14</td>
+              <td class="number">15</td>
+              <td class="number">16</td>
+              <td class="number">17</td>
+              <td class="number">18</td>
+              <td class="number">19</td>
+              <td class="number">20</td>
+            </tr> 
+            <tr class="row">
+              <!-- <td class="number number-col">01</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">02</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">03</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">04</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number  number-col">05</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">06</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">07</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">08</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">09</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+            <tr class="row">
+              <!-- <td class="number number-col">10</td> -->
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+              <td class="row-cell"></td>
+            </tr>
+          </table>
+
+          <h4 id="inaccuracyPerceptron-lng" class="inaccuracy inaccuracy-neuron inaccuracy-preceptron">Inaccuracy in the responses perceptron:&#8196</h4>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        FOOTER: 303;
+      </div>
+    </footer>
+  </div>
+  <script src="neuron.js"></script>
+</body>
+
+</html>

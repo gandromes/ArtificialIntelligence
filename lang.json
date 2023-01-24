@@ -15,6 +15,10 @@
         "en": "one - Neuron",
         "ru": "один - Нейрон"
     },
+    "topic-2": {
+        "en": "one - Perceptron",
+        "ru": "один - Персептрон"
+    },
     "description": {
         "en": "Familiarity with simplest artificial intelligence",
         "ru": "Знакомство с простейшим искусственным интеллектом"
@@ -35,7 +39,7 @@
         "en": "Inaccuracy in the responses neuron: ",
         "ru": "Погрешность в ответах нейрона: "  
     },
-    "inaccuracyPerceptron-lng": {
+    "inaccuracyPerceptron": {
         "en": "Inaccuracy in the responses perceptron: ",
         "ru": "Погрешность в ответах персептрона: "  
     },
@@ -58,6 +62,22 @@
     "image-exit": {
         "en": "Output",
         "ru": "Выход"
+    },
+    "imagePer_title": {
+        "en": "Elements of a single-layer perceptron",
+        "ru": "Элементы однослойного персептрона"
+    },
+    "imagePer_subtitleTouch": {
+        "en": "Touch",
+        "ru": "Сенсорные"
+    },
+    "imagePer_subtitleAss": {
+        "en": "Associative",
+        "ru": "Ассоциативный"
+    },
+    "imagePer_subtitleRes": {
+        "en": "Reactive (neurons)",
+        "ru": "Реагирующие (нейроны)"
     },
     "description_text": {
         "en": "A neural network of one neuron is the simplest one-layer network consisting of:\n• 3 data inputs\n\t• X1 X2 like X, Y\n\t• X3 as a constant = 1\n• 3 weight coefficients (W1 W2 W3)\n• 1 neuron (S)\n• 1 axon (used Sigmoid)\n\t• slope factor = 0.03",
