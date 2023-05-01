@@ -37,11 +37,11 @@
     },
     "inaccuracyNeuron": {
         "en": "Inaccuracy in the responses neuron: ",
-        "ru": "Погрешность в ответах нейрона: "  
+        "ru": "Погрешность в ответах нейрона: "
     },
     "inaccuracyPerceptron": {
         "en": "Inaccuracy in the responses perceptron: ",
-        "ru": "Погрешность в ответах персептрона: "  
+        "ru": "Погрешность в ответах персептрона: "
     },
     "image-dendrits": {
         "en": "Dendrites (inputs)",
