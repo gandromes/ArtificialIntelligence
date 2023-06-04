@@ -327,9 +327,6 @@ function teachPerceptron(m = 1, d = 0.1) {
         m--
     }
     process(TablePerceptron, 'perceptron', true, processSettingObject, 'pinpoint')
-    /* process(TablePerceptron, 'perceptron', null, { */
-    /*     result: Resultss, */
-    /* }) */
 }
 
 // General func
